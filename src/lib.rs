@@ -1,6 +1,6 @@
 const BASE64_ALPHABET: &str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
 
-pub fn base64encode(value: &str) -> String {
+pub fn base64_encode(value: &str) -> String {
     let mut bytes = value.bytes().collect::<Vec<_>>();
     let rem = bytes.len() % 3;
 
@@ -64,25 +64,25 @@ mod tests {
 
     #[test]
     fn test_ascii_1b() {
-        let result = base64encode("a");
+        let result = base64_encode("a");
         assert_eq!(result, "YQ==");
     }
 
     #[test]
     fn test_island_2b() {
-        let result = base64encode("ö");
+        let result = base64_encode("ö");
         assert_eq!(result, "w7Y=");
     }
 
     #[test]
     fn test_kanji_3b() {
-        let result = base64encode("漢");
+        let result = base64_encode("漢");
         assert_eq!(result, "5ryi");
     }
 
     #[test]
     fn test_emoji_4b() {
-        let result = base64encode("💀");
+        let result = base64_encode("💀");
         assert_eq!(result, "8J+SgA==");
     }
 }
