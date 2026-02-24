@@ -1,0 +1,6 @@
+[package]
+name = "rtfw-b64"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
