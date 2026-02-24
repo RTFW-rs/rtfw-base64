@@ -1,6 +1,6 @@
-# ✨ rtfw-base64
+# ✨ rtfw-base64-rs
 
-![build](https://github.com/RTFW-rs/rtfw-base64/actions/workflows/rust.yml/badge.svg)
+![build](https://github.com/RTFW-rs/rtfw-base64-rs/actions/workflows/rust.yml/badge.svg)
 
 This is a lazy implementation of Base64 from scratch to learn how it works.
 

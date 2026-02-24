@@ -3,5 +3,5 @@
 version = 4
 
 [[package]]
-name = "rtfw-b64"
+name = "rtfw-b64-rs"
 version = "0.1.0"
