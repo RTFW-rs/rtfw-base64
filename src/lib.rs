@@ -123,6 +123,42 @@ mod tests {
     }
 
     #[test]
+    fn test_encode_f() {
+        let result = base64_encode("f");
+        assert_eq!(result, "Zg==");
+    }
+
+    #[test]
+    fn test_encode_fo() {
+        let result = base64_encode("fo");
+        assert_eq!(result, "Zm8=");
+    }
+
+    #[test]
+    fn test_encode_foo() {
+        let result = base64_encode("foo");
+        assert_eq!(result, "Zm9v");
+    }
+
+    #[test]
+    fn test_encode_foob() {
+        let result = base64_encode("foob");
+        assert_eq!(result, "Zm9vYg==");
+    }
+
+    #[test]
+    fn test_encode_fooba() {
+        let result = base64_encode("fooba");
+        assert_eq!(result, "Zm9vYmE=");
+    }
+
+    #[test]
+    fn test_encode_foobar() {
+        let result = base64_encode("foobar");
+        assert_eq!(result, "Zm9vYmFy");
+    }
+
+    #[test]
     fn test_decode_ascii_1b() {
         let result = base64_decode("YQ==");
         assert_eq!(result, "a");
@@ -144,5 +180,47 @@ mod tests {
     fn test_decode_emoji_4b() {
         let result = base64_decode("8J+SgA==");
         assert_eq!(result, "💀");
+    }
+
+    #[test]
+    fn test_decode_empty() {
+        let result = base64_decode("");
+        assert_eq!(result, "");
+    }
+
+    #[test]
+    fn test_decode_f() {
+        let result = base64_decode("Zg==");
+        assert_eq!(result, "f");
+    }
+
+    #[test]
+    fn test_decode_fo() {
+        let result = base64_decode("Zm8=");
+        assert_eq!(result, "fo");
+    }
+
+    #[test]
+    fn test_decode_foo() {
+        let result = base64_decode("Zm9v");
+        assert_eq!(result, "foo");
+    }
+
+    #[test]
+    fn test_decode_foob() {
+        let result = base64_decode("Zm9vYg==");
+        assert_eq!(result, "foob");
+    }
+
+    #[test]
+    fn test_decode_fooba() {
+        let result = base64_decode("Zm9vYmE=");
+        assert_eq!(result, "fooba");
+    }
+
+    #[test]
+    fn test_decode_foobar() {
+        let result = base64_decode("Zm9vYmFy");
+        assert_eq!(result, "foobar");
     }
 }
